@@ -91,6 +91,9 @@ class _CarDetailsState extends State<CarDetails> {
     ];
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Cars"),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -99,32 +102,30 @@ class _CarDetailsState extends State<CarDetails> {
             Container(
               height: height * 0.7,
               width: double.infinity,
-              child: Expanded(
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: cars.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    final car = cars[index];
-                    return Padding(
-                      padding: EdgeInsets.symmetric(horizontal: width * 0.02),
-                      child: SizedBox(
-                        width: width * 0.35, // Smaller card width
-                        child: buildCarCard(
-                          Height: height * 0.6, // Smaller card height
-                          assetImagePath: car['assetImagePath'],
-                          title: car['title'],
-                          details:
-                              List<Map<String, dynamic>>.from(car['details']),
-                          buttonText: car['buttonText'],
-                          onPressed: () {
-                            debugPrint(
-                                'View Details pressed for ${car['title']}');
-                          },
-                        ),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: cars.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final car = cars[index];
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.02),
+                    child: SizedBox(
+                      width: width * 0.35, // Smaller card width
+                      child: buildCarCard(
+                        Height: height * 0.6, // Smaller card height
+                        assetImagePath: car['assetImagePath'],
+                        title: car['title'],
+                        details:
+                            List<Map<String, dynamic>>.from(car['details']),
+                        buttonText: car['buttonText'],
+                        onPressed: () {
+                          debugPrint(
+                              'View Details pressed for ${car['title']}');
+                        },
                       ),
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
           ],
