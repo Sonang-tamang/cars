@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 /// Function to build a card for displaying car details
-/// Function to build a card for displaying car details
 Widget buildCarCard({
   required double Height,
   required String assetImagePath,
@@ -19,10 +18,9 @@ Widget buildCarCard({
       padding: const EdgeInsets.all(8.0), // Smaller padding
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize:
-            MainAxisSize.min, // Ensure the card adjusts its height dynamically
+        mainAxisSize: MainAxisSize.min, // Dynamically adjusts the card height
         children: [
-          // Image Section
+          // Image Section with Error Handling
           ClipRRect(
             borderRadius: BorderRadius.circular(8.0),
             child: Image.asset(
@@ -30,6 +28,17 @@ Widget buildCarCard({
               width: double.infinity,
               height: Height * 0.5, // Reduced image height
               fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  height: Height * 0.5,
+                  color: Colors.grey[300],
+                  child: Icon(
+                    Icons.broken_image,
+                    size: 48.0,
+                    color: Colors.grey,
+                  ),
+                );
+              },
             ),
           ),
           const SizedBox(height: 4.0), // Reduced spacing
@@ -63,23 +72,22 @@ Widget buildCarCard({
               ),
             );
           }).toList(),
-          // SizedBox(
-          //   height: 20,
-          // ),
-
+          const SizedBox(height: 8.0), // Adjust spacing for the button
           Align(
             alignment: Alignment.centerLeft,
             child: TextButton(
-              onPressed: onPressed,
+              onPressed: onPressed ?? () {}, // Fallback to prevent null errors
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero, // No padding for the button
                 minimumSize:
                     const Size(0, 0), // Minimum size to reduce extra height
+                tapTargetSize:
+                    MaterialTapTargetSize.shrinkWrap, // Compact tap size
               ),
               child: Text(
                 buttonText,
                 style: const TextStyle(
-                    color: Colors.blue, fontSize: 12.0), // Smaller font
+                    color: Colors.blue, fontSize: 14.0), // Smaller font
               ),
             ),
           ),

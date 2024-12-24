@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:cars/components/carPIc.dart';
+import 'package:cars/pages/CarDetailScreen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,7 @@ class _CarDetailsState extends State<CarDetails> {
           },
           {"icon": Icons.flash_on, "text": "Fast Charging: 30–80% in 20 mins"},
         ],
-        "buttonText": "View Details",
+        "buttonText": "Calculate EMI",
       },
       {
         "assetImagePath": "assets/netavx.png",
@@ -41,7 +42,7 @@ class _CarDetailsState extends State<CarDetails> {
           {"icon": Icons.timer, "text": "Acceleration Time: 9.5 s"},
           {"icon": Icons.battery_saver, "text": "Battery Type: LFP"},
         ],
-        "buttonText": "View Details"
+        "buttonText": "Calculate EMI"
       },
       {
         "assetImagePath": "assets/netas.png",
@@ -52,7 +53,7 @@ class _CarDetailsState extends State<CarDetails> {
           {"icon": Icons.air, "text": "Active Air Suspension"},
           {"icon": Icons.flash_on, "text": "Fast Charging: 150 km in 5 min"},
         ],
-        "buttonText": "View Details"
+        "buttonText": "Calculate EMI"
       },
       //new datails to cange
       {
@@ -64,7 +65,7 @@ class _CarDetailsState extends State<CarDetails> {
           {"icon": Icons.air, "text": "Active Air Suspension"},
           {"icon": Icons.flash_on, "text": "Fast Charging: 150 km in 5 min"},
         ],
-        "buttonText": "View Details"
+        "buttonText": "Calculate EMI"
       },
       {
         "assetImagePath": "assets/KYC.png",
@@ -75,7 +76,7 @@ class _CarDetailsState extends State<CarDetails> {
           {"icon": Icons.air, "text": "Active Air Suspension"},
           {"icon": Icons.flash_on, "text": "Fast Charging: 150 km in 5 min"},
         ],
-        "buttonText": "View Details"
+        "buttonText": "Calculate EMI"
       },
       {
         "assetImagePath": "assets/King.png",
@@ -86,7 +87,7 @@ class _CarDetailsState extends State<CarDetails> {
           {"icon": Icons.air, "text": "Active Air Suspension"},
           {"icon": Icons.flash_on, "text": "Fast Charging: 150 km in 5 min"},
         ],
-        "buttonText": "View Details"
+        "buttonText": "Calculate EMI"
       },
     ];
 
@@ -121,6 +122,12 @@ class _CarDetailsState extends State<CarDetails> {
                         onPressed: () {
                           debugPrint(
                               'View Details pressed for ${car['title']}');
+
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CarDetailScreen(car: car),
+                              ));
                         },
                       ),
                     ),
