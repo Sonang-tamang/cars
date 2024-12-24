@@ -72,7 +72,7 @@ Widget buildCarCard({
               ),
             );
           }).toList(),
-          const SizedBox(height: 8.0), // Adjust spacing for the button
+          Spacer(),
           Align(
             alignment: Alignment.centerLeft,
             child: TextButton(
@@ -87,7 +87,7 @@ Widget buildCarCard({
               child: Text(
                 buttonText,
                 style: const TextStyle(
-                    color: Colors.blue, fontSize: 14.0), // Smaller font
+                    color: Colors.blue, fontSize: 17.0), // Smaller font
               ),
             ),
           ),

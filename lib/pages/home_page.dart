@@ -64,18 +64,6 @@ class _HomePageState extends State<HomePage> {
             ),
 
             // car details
-
-            SizedBox(
-              height: height * 0.2,
-              width: width * 0.4,
-              child: InkWell(
-                onTap: goto_carDetails,
-                child: Card(
-                  color: Colors.blue,
-                  child: Center(child: Text("Car details")),
-                ),
-              ),
-            )
           ],
         ),
       ),
@@ -90,13 +78,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   void goto_EMI() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Emi()),
-    );
-  }
-
-  void goto_carDetails() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => CarDetails()),

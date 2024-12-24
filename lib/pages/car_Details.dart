@@ -21,6 +21,7 @@ class _CarDetailsState extends State<CarDetails> {
     final List<Map<String, dynamic>> cars = [
       {
         "assetImagePath": "assets/netav50.png",
+        'price': "3899000",
         "title": "NETA V50",
         "details": [
           {"icon": Icons.price_check, "text": "Net V50 Rs: 38,99,000"},
@@ -36,6 +37,7 @@ class _CarDetailsState extends State<CarDetails> {
       {
         "assetImagePath": "assets/netavx.png",
         "title": "NETA X",
+        'price': "5599000",
         "details": [
           {"icon": Icons.price_check, "text": "Comfort Rs: 53,99,000"},
           {"icon": Icons.electric_car, "text": "NEDC Range: 500 km"},
@@ -47,7 +49,9 @@ class _CarDetailsState extends State<CarDetails> {
       {
         "assetImagePath": "assets/netas.png",
         "title": "NETA S",
+        'price': "6099000",
         "details": [
+          {"icon": Icons.price_check, "text": "Comfort Rs: 60,99,000"},
           {"icon": Icons.electric_car, "text": "NEDC Range: 1100 km"},
           {"icon": Icons.drive_eta, "text": "L4 Auto Driving in some scenes"},
           {"icon": Icons.air, "text": "Active Air Suspension"},
@@ -59,7 +63,9 @@ class _CarDetailsState extends State<CarDetails> {
       {
         "assetImagePath": "assets/AionY.png",
         "title": "GAC Motor - Aion Y",
+        'price': "3399000",
         "details": [
+          {"icon": Icons.price_check, "text": "Comfort Rs: 33,99,000"},
           {"icon": Icons.electric_car, "text": "NEDC Range: 1100 km"},
           {"icon": Icons.drive_eta, "text": "L4 Auto Driving in some scenes"},
           {"icon": Icons.air, "text": "Active Air Suspension"},
@@ -70,7 +76,9 @@ class _CarDetailsState extends State<CarDetails> {
       {
         "assetImagePath": "assets/KYC.png",
         "title": "Kuayue Chana V5D",
+        'price': "8399000",
         "details": [
+          {"icon": Icons.price_check, "text": "Comfort Rs: 83,99,000"},
           {"icon": Icons.electric_car, "text": "NEDC Range: 1100 km"},
           {"icon": Icons.drive_eta, "text": "L4 Auto Driving in some scenes"},
           {"icon": Icons.air, "text": "Active Air Suspension"},
@@ -81,7 +89,9 @@ class _CarDetailsState extends State<CarDetails> {
       {
         "assetImagePath": "assets/King.png",
         "title": "KINGWIN EV",
+        'price': "5400000",
         "details": [
+          {"icon": Icons.price_check, "text": "Comfort Rs: 54,00,000"},
           {"icon": Icons.electric_car, "text": "NEDC Range: 1100 km"},
           {"icon": Icons.drive_eta, "text": "L4 Auto Driving in some scenes"},
           {"icon": Icons.air, "text": "Active Air Suspension"},
