@@ -46,7 +46,7 @@ Widget buildCarCard({
           Text(
             title,
             style: TextStyle(
-              fontSize: Height * 0.06, // Smaller font size
+              fontSize: Height * 0.05, // Smaller font size
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -88,7 +88,7 @@ Widget buildCarCard({
                 buttonText,
                 style: TextStyle(
                     color: Colors.blue,
-                    fontSize: Height * 0.07), // Smaller font
+                    fontSize: Height * 0.06), // Smaller font
               ),
             ),
           ),

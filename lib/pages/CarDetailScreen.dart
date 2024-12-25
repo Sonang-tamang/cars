@@ -237,12 +237,10 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                                         // labelText: "Loan Amount (Rs)",
                                         enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .tertiary)),
+                                                color: Colors.white)),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide:
-                                              BorderSide(color: Colors.black),
+                                              BorderSide(color: Colors.blue),
                                         ),
 
                                         hintStyle: TextStyle(
@@ -271,12 +269,10 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                                         // labelText: "Loan Amount (Rs)",
                                         enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .tertiary)),
+                                                color: Colors.white)),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide:
-                                              BorderSide(color: Colors.black),
+                                              BorderSide(color: Colors.blue),
                                         ),
 
                                         hintStyle: TextStyle(
@@ -305,12 +301,10 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                                         // labelText: "Loan Amount (Rs)",
                                         enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .tertiary)),
+                                                color: Colors.white)),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide:
-                                              BorderSide(color: Colors.black),
+                                              BorderSide(color: Colors.blue),
                                         ),
 
                                         hintStyle: TextStyle(
@@ -339,7 +333,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                               child: Text(
                                 "Calculate",
                                 style: TextStyle(
-                                    fontSize: 15,
+                                    fontSize: width * 0.02,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -367,7 +361,8 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                     children: [
                       Text('Breakdown',
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)),
+                              fontSize: height * 0.03,
+                              fontWeight: FontWeight.bold)),
                       SizedBox(
                         height: height * 0.03,
                       ),
@@ -375,13 +370,18 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                         height: height * 0.1,
                         width: width,
                         child: Card(
-                          elevation: 5,
+                          elevation: 1,
                           color: Colors.white,
-                          child: Column(
-                            children: [
-                              Text("Monthly Payment"),
-                              Text("Rs ${emi.toStringAsFixed(2)}")
-                            ],
+                          child: Center(
+                            child: Column(
+                              children: [
+                                Text("Monthly Payment",
+                                    style: TextStyle(
+                                        fontSize: height * 0.024,
+                                        fontWeight: FontWeight.bold)),
+                                Text("Rs ${emi.toStringAsFixed(2)}")
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -392,11 +392,14 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                         height: height * 0.1,
                         width: width,
                         child: Card(
-                          elevation: 5,
+                          elevation: 1,
                           color: Colors.white,
                           child: Column(
                             children: [
-                              Text("Total Interest Payable"),
+                              Text("Total Interest Payable",
+                                  style: TextStyle(
+                                      fontSize: height * 0.024,
+                                      fontWeight: FontWeight.bold)),
                               Text("Rs ${totalInterest.toStringAsFixed(2)}")
                             ],
                           ),
@@ -408,11 +411,14 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                         height: height * 0.1,
                         width: width,
                         child: Card(
-                          elevation: 5,
+                          elevation: 1,
                           color: Colors.white,
                           child: Column(
                             children: [
-                              Text("Total Payment"),
+                              Text("Total Payment",
+                                  style: TextStyle(
+                                      fontSize: height * 0.024,
+                                      fontWeight: FontWeight.bold)),
                               Text("Rs ${totalPayment.toStringAsFixed(2)}")
                             ],
                           ),
@@ -435,7 +441,8 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                     children: [
                       Text('Down Payment',
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold)),
+                              fontSize: height * 0.03,
+                              fontWeight: FontWeight.bold)),
 
                       SizedBox(
                         height: height * 0.03,
