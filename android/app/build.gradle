@@ -31,14 +31,22 @@ android {
     }
 
     buildTypes {
-        release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+        release { 
+        minifyEnabled false  // Disable minification
+        shrinkResources false  // Disable resource shrinking
+        signingConfig = signingConfigs.debug  // Debug signing config for release
         }
     }
 }
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    // Add the AppCompat library to support AppCompatActivity
+    implementation "androidx.appcompat:appcompat:1.4.2"
+    
+    // Add the Material Components library for Snackbar support
+    implementation "com.google.android.material:material:1.6.0"
 }

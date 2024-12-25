@@ -45,8 +45,8 @@ Widget buildCarCard({
           // Title
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 14.0, // Smaller font size
+            style: TextStyle(
+              fontSize: Height * 0.06, // Smaller font size
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -64,8 +64,8 @@ Widget buildCarCard({
                   Expanded(
                     child: Text(
                       detail['text'],
-                      style:
-                          const TextStyle(fontSize: 12.0), // Smaller font size
+                      style: TextStyle(
+                          fontSize: Height * 0.04), // Smaller font size
                     ),
                   ),
                 ],
@@ -86,8 +86,9 @@ Widget buildCarCard({
               ),
               child: Text(
                 buttonText,
-                style: const TextStyle(
-                    color: Colors.blue, fontSize: 17.0), // Smaller font
+                style: TextStyle(
+                    color: Colors.blue,
+                    fontSize: Height * 0.07), // Smaller font
               ),
             ),
           ),

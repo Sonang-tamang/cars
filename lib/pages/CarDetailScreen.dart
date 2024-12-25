@@ -2,7 +2,6 @@
 
 import 'dart:math';
 
-import 'package:cars/pages/EMI.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -217,7 +216,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                         height: height * 0.3,
                         width: width * 0.3,
                         child: Card(
-                          elevation: 4,
+                          elevation: 1,
                           child: Container(
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -225,7 +224,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: SizedBox(
-                                    height: height * 0.05,
+                                    height: height * 0.06,
                                     width: width * 0.26,
                                     child: TextField(
                                       controller: loanAmountController,
@@ -258,7 +257,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: SizedBox(
-                                    height: height * 0.05,
+                                    height: height * 0.06,
                                     width: width * 0.26,
                                     child: TextField(
                                       controller: interestRateController,
@@ -292,7 +291,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: SizedBox(
-                                    height: height * 0.05,
+                                    height: height * 0.06,
                                     width: width * 0.26,
                                     child: TextField(
                                       controller: tenureController,
@@ -330,6 +329,8 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                         width: width * 0.2,
                         child: InkWell(
                           onTap: () {
+                            FocusScope.of(context)
+                                .unfocus(); // Dismiss the keyboard
                             calculateEMI();
                           },
                           child: Card(
@@ -535,12 +536,6 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                     ],
                   ),
                 ),
-
-                // ElevatedButton(
-                //     onPressed: () {
-                //       print(" ${widget.car['price']}");
-                //     },
-                //     child: Text("print"))
               ],
             ),
           ],

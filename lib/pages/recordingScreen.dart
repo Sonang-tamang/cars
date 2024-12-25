@@ -88,6 +88,9 @@ class _RecordingState extends State<Recording> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("AI chat bot"),
+      ),
       body: Center(
         child: isLoading
             ? Text("thinking")
