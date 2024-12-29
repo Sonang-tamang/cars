@@ -27,7 +27,7 @@ Widget buildCarCard({
               assetImagePath,
               width: double.infinity,
               height: Height * 0.5, // Reduced image height
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
                   height: Height * 0.5,
@@ -75,22 +75,40 @@ Widget buildCarCard({
           Spacer(),
           Align(
             alignment: Alignment.centerLeft,
-            child: TextButton(
+            child: ElevatedButton(
               onPressed: onPressed ?? () {}, // Fallback to prevent null errors
-              style: TextButton.styleFrom(
-                padding: EdgeInsets.zero, // No padding for the button
-                minimumSize:
-                    const Size(0, 0), // Minimum size to reduce extra height
-                tapTargetSize:
-                    MaterialTapTargetSize.shrinkWrap, // Compact tap size
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+
+                // Color.fromARGB(255, 141, 136, 135),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
               child: Text(
                 buttonText,
-                style: TextStyle(
-                    color: Colors.blue,
-                    fontSize: Height * 0.06), // Smaller font
+                style: TextStyle(color: Colors.white),
               ),
             ),
+
+            //  TextButton(
+            //   onPressed: onPressed ?? () {}, // Fallback to prevent null errors
+            //   style: TextButton.styleFrom(
+            //     padding: EdgeInsets.zero, // No padding for the button
+            //     minimumSize:
+            //         const Size(0, 0), // Minimum size to reduce extra height
+            //     tapTargetSize:
+            //         MaterialTapTargetSize.shrinkWrap, // Compact tap size
+            //   ),
+            //   child: Text(
+            //     buttonText,
+            //     style: TextStyle(
+            //         color: Colors.blue,
+            //         fontSize: Height * 0.06), // Smaller font
+            //   ),
+            // ),
           ),
         ],
       ),

@@ -122,23 +122,34 @@ class _CarDetailsState extends State<CarDetails> {
                     padding: EdgeInsets.symmetric(horizontal: width * 0.02),
                     child: SizedBox(
                       width: width * 0.35, // Smaller card width
-                      child: buildCarCard(
-                        Height: height * 0.6, // Smaller card height
-                        assetImagePath: car['assetImagePath'],
-                        title: car['title'],
-                        details:
-                            List<Map<String, dynamic>>.from(car['details']),
-                        buttonText: car['buttonText'],
-                        onPressed: () {
-                          debugPrint(
-                              'View Details pressed for ${car['title']}');
-
+                      child: GestureDetector(
+                        onTap: () {
+                          print('View Details pressed for ${car['title']}');
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => CarDetailScreen(car: car),
                               ));
                         },
+                        child: buildCarCard(
+                          Height: height * 0.6, // Smaller card height
+                          assetImagePath: car['assetImagePath'],
+                          title: car['title'],
+                          details:
+                              List<Map<String, dynamic>>.from(car['details']),
+                          buttonText: car['buttonText'],
+                          onPressed: () {
+                            debugPrint(
+                                'View Details pressed for ${car['title']}');
+
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      CarDetailScreen(car: car),
+                                ));
+                          },
+                        ),
                       ),
                     ),
                   );

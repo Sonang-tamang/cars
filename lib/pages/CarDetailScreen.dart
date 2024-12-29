@@ -109,7 +109,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
 
                   // Car Details
                   SizedBox(
-                    height: height * 0.35,
+                    height: height * 0.4,
                     width: width * 0.2,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,7 +121,14 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 16.0),
+                        SizedBox(height: 10.0),
+                        Text(
+                          "features",
+                          style: TextStyle(
+                              fontSize: height * 0.025,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
                         ...List<Map<String, dynamic>>.from(
                                 widget.car['details'])
                             .map(
@@ -169,9 +176,9 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                                     : 1, // Avoid zero value
                                 color: Colors.blue,
                                 title: 'Principal',
-                                radius: 50,
+                                radius: 80,
                                 titleStyle: TextStyle(
-                                    fontSize: 10,
+                                    fontSize: height * 0.02,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               ),
@@ -181,9 +188,9 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                                     : 1, // Avoid zero value
                                 color: const Color.fromARGB(255, 26, 60, 211),
                                 title: 'Interest',
-                                radius: 50,
+                                radius: 80,
                                 titleStyle: TextStyle(
-                                    fontSize: 10,
+                                    fontSize: height * 0.02,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white),
                               ),
@@ -348,14 +355,14 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                 // pie chart#####################160786
 
                 SizedBox(
-                  width: width * 0.03,
+                  width: width * 0.01,
                 ),
 
                 // out puts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
                 Container(
-                  height: height * 0.4,
-                  width: width * 0.2,
+                  height: height * 0.3,
+                  width: width * 0.28,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -366,50 +373,54 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                       SizedBox(
                         height: height * 0.03,
                       ),
-                      SizedBox(
-                        height: height * 0.1,
-                        width: width,
-                        child: Card(
-                          elevation: 1,
-                          color: Colors.white,
-                          child: Center(
-                            child: Column(
-                              children: [
-                                Text("Monthly Payment",
-                                    style: TextStyle(
-                                        fontSize: height * 0.024,
-                                        fontWeight: FontWeight.bold)),
-                                Text("Rs ${emi.toStringAsFixed(2)}")
-                              ],
+
+                      Row(
+                        children: [
+                          SizedBox(
+                            height: height * 0.1,
+                            width: width * 0.14,
+                            child: Card(
+                              elevation: 1,
+                              color: Colors.white,
+                              child: Center(
+                                child: Column(
+                                  children: [
+                                    Text("Monthly Payment",
+                                        style: TextStyle(
+                                            fontSize: height * 0.02,
+                                            fontWeight: FontWeight.bold)),
+                                    Text("Rs ${emi.toStringAsFixed(2)}")
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                          SizedBox(
+                            height: height * 0.1,
+                            width: width * 0.14,
+                            child: Card(
+                              elevation: 1,
+                              color: Colors.white,
+                              child: Column(
+                                children: [
+                                  Text("Total Interest",
+                                      style: TextStyle(
+                                          fontSize: height * 0.024,
+                                          fontWeight: FontWeight.bold)),
+                                  Text("Rs ${totalInterest.toStringAsFixed(2)}")
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
 
                       // total intrast #####################
 
-                      SizedBox(
-                        height: height * 0.1,
-                        width: width,
-                        child: Card(
-                          elevation: 1,
-                          color: Colors.white,
-                          child: Column(
-                            children: [
-                              Text("Total Interest Payable",
-                                  style: TextStyle(
-                                      fontSize: height * 0.024,
-                                      fontWeight: FontWeight.bold)),
-                              Text("Rs ${totalInterest.toStringAsFixed(2)}")
-                            ],
-                          ),
-                        ),
-                      ),
-
                       // Total Payment ##############################160786
                       SizedBox(
                         height: height * 0.1,
-                        width: width,
+                        width: width * 0.2,
                         child: Card(
                           elevation: 1,
                           color: Colors.white,
@@ -429,7 +440,7 @@ class _CarDetailScreenState extends State<CarDetailScreen> {
                 ),
 
                 SizedBox(
-                  width: width * 0.04,
+                  width: width * 0.01,
                 ),
 
                 // interst rates##########################

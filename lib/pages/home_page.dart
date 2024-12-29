@@ -35,20 +35,20 @@ class _HomePageState extends State<HomePage> {
       dualScreenController.showVideoOnSecondaryScreen("sample_video");
     });
 
-    _pageController = PageController(initialPage: 0);
-    Timer.periodic(Duration(seconds: 3), (Timer timer) {
-      if (_currentPage < _images.length - 1) {
-        _currentPage++;
-      } else {
-        _currentPage = 0;
-      }
+    // _pageController = PageController(initialPage: 0);
+    // Timer.periodic(Duration(seconds: 3), (Timer timer) {
+    //   if (_currentPage < _images.length - 1) {
+    //     _currentPage++;
+    //   } else {
+    //     _currentPage = 0;
+    //   }
 
-      _pageController.animateToPage(
-        _currentPage,
-        duration: Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    });
+    //   _pageController.animateToPage(
+    //     _currentPage,
+    //     duration: Duration(milliseconds: 300),
+    //     curve: Curves.easeInOut,
+    //   );
+    // });
   }
 
   @override
@@ -62,88 +62,144 @@ class _HomePageState extends State<HomePage> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: height * 0.15,
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            height: height * 0.15,
-            child: Image.asset(
-              "assets/logo.png",
-              fit: BoxFit.fitHeight,
-            ),
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.white,
           ),
-        ),
-      ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: height * 0.5,
-              width: width * 0.7,
-              child: PageView.builder(
-                controller: _pageController,
-                itemCount: _images.length,
-                onPageChanged: (int index) {
-                  setState(() {
-                    _currentPage = index;
-                  });
-                },
-                itemBuilder: (context, index) {
-                  return Image.asset(
-                    _images[index], // Use Image.asset for local images
-                    fit: BoxFit.contain,
-                  );
-                },
+          Positioned(
+            top: 0,
+            right: 0,
+            child: Container(
+              height: height * 0.9,
+              width: width * 0.4,
+              decoration: const BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(300),
+                    topLeft: Radius.circular(100)),
               ),
             ),
-            SizedBox(
-              height: height * 0.04,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 40.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: height * 0.2,
-                  width: width * 0.2,
-                  child: InkWell(
-                    onTap: goto_AI,
-                    child: Card(
-                      color: const Color.fromARGB(255, 211, 186, 185),
-                      child: Center(
-                          child: Text(
-                        "Voice Assistant",
-                        style: TextStyle(
-                          fontSize: width * 0.02,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        SizedBox(
+                          height: height * 0.15,
+                          child: Image.asset(
+                            "assets/logo.png",
+                            fit: BoxFit.fitHeight,
+                          ),
                         ),
-                      )),
+                      ],
                     ),
+                  ],
+                ),
+                SizedBox(height: height * 0.1),
+                // Title
+                Text(
+                  "Innovation meets performance. \nDrive the future \nOwn the innovation.",
+                  style: TextStyle(
+                    fontSize: width * 0.03,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-                SizedBox(
-                  width: width * 0.2,
-                ),
-                SizedBox(
-                  height: height * 0.2,
-                  width: width * 0.2,
-                  child: InkWell(
-                    onTap: goto_EMI,
-                    child: Card(
-                      color: const Color.fromARGB(255, 210, 195, 194),
-                      child: Center(
-                          child: Text(
-                        "EMI Calculater",
-                        style: TextStyle(
-                          fontSize: width * 0.02,
-                        ),
-                      )),
-                    ),
+
+                Text(
+                  "Drive Smart, Drive CG Motors!",
+                  style: TextStyle(
+                    fontSize: width * 0.03,
+                    fontWeight: FontWeight.bold,
                   ),
+                ),
+                SizedBox(height: 20),
+                Text(
+                  "Discover our range of electric and fuel-efficient \nvehicles designed to drive the future.",
+                  style: TextStyle(fontSize: width * 0.015, color: Colors.grey),
+                ),
+                SizedBox(height: height * 0.07),
+                Row(
+                  children: [
+                    // ElevatedButton(
+                    //   onPressed: () {
+                    //     goto_EMI();
+                    //   },
+                    //   style: ElevatedButton.styleFrom(
+                    //     backgroundColor: Color.fromARGB(255, 141, 136, 135),
+                    //     padding: const EdgeInsets.symmetric(
+                    //         horizontal: 20, vertical: 15),
+                    //     shape: RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.circular(8),
+                    //     ),
+                    //   ),
+                    //   child: const Text(
+                    //     "Explore Cars",
+                    //     style: TextStyle(color: Colors.white),
+                    //   ),
+                    // ),
+
+                    SizedBox(
+                      height: height * 0.1,
+                      width: width * 0.2,
+                      child: InkWell(
+                        onTap: goto_EMI,
+                        child: Card(
+                          color: const Color.fromARGB(255, 141, 136, 135),
+                          child: Center(
+                              child: Text(
+                            "Explore Cars",
+                            style: TextStyle(
+                                fontSize: width * 0.02, color: Colors.white),
+                          )),
+                        ),
+                      ),
+                    ),
+
+                    // second button################
+
+                    SizedBox(
+                      width: width * 0.07,
+                    ),
+
+                    SizedBox(
+                      height: height * 0.1,
+                      width: width * 0.2,
+                      child: InkWell(
+                        onTap: goto_AI,
+                        child: Card(
+                          color: const Color.fromARGB(255, 141, 136, 135),
+                          child: Center(
+                              child: Text(
+                            "Voice Assistant",
+                            style: TextStyle(
+                                fontSize: width * 0.02, color: Colors.white),
+                          )),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+          // Car Image
+          Align(
+            alignment: Alignment.centerRight,
+            child: Image.asset(
+              'assets/netav50.png',
+              height: height * 0.5,
+              fit: BoxFit.contain,
+            ),
+          ),
+        ],
       ),
     );
   }
